@@ -1,0 +1,30 @@
+preprocessing:
+  - exec: timer_start()
+  - multiplied: []
+  - added: []
+  - multiply_sum: None
+  - hello: _if(True, 9, 12)
+  # equivalent
+  # - exec: set_var('hello', _if(True, 9, 12))
+  - exec: _if(True, 4, 7)
+  - exec: display(context['temp'], 'showing temp after preprocessing')
+  # terminate the script
+  # - exec: exit()
+position:
+  - exec: append_var('multiplied', position['value'] * position['multiplier'])
+  - exec: append_var('added', position['value'] + 1.3)
+  - exec: set_var(position['id'], position['isin'])
+  - exec: set_var('dummy', position['isin'], position['id'])
+  - exec: display_context('at position iteration')
+  # for _if, only one outcome will be evaluated
+  - exec: _if(is_last_position(), set_position_var('dummy', 67), None)
+  # - exec: is_last_position()
+  # - exec: exit()
+portfolio:
+  - multiply_sum: sum(temp['multiplied'])
+  - added_sum: sum(temp['added'])
+  # - exec: display_context()
+  # - exec: exit()
+postprocessing:
+  - exec: display(context['temp'], 'postprocessing temp')
+  - exec: timer_end()

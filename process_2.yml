@@ -1,0 +1,9 @@
+preprocessing:
+  #
+position:
+  #
+portfolio:
+  #
+postprocessing:
+  - exec: display(context['temp'], 'display temp variable in process 2')
+  - exec: timer_end()

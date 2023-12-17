@@ -1,0 +1,31 @@
+{
+    "traceId": "dummyId",
+    "location": "",
+    "date": "",
+    "portfolios": [
+        {
+            "id": "p001",
+            "positions": [
+                {
+                    "id": "p001p001",
+                    "isin": "001",
+                    "value": 1000,
+                    "multiplier": 4,
+                    "to_remove": null,
+                    "type": "a"
+                },
+                {
+                    "id": "p001p002",
+                    "isin": "002",
+                    "value": 2000,
+                    "multiplier": 5,
+                    "type": "b"
+                }
+            ]
+        }
+    ],
+    "processors": [
+        "process_1.yml",
+        "process_2.yml"
+    ]
+}
